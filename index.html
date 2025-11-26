@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efektif Mesaj</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Orbitron:wght@500&family=Pacifico&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="hearts-container" class="hearts-container"></div>
+
+    <div style="position: absolute; top: 20px; right: 20px; z-index: 50;">
+        <button id="lang-btn"
+            style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.3); color:#fff; padding:5px 10px; border-radius:5px; cursor:pointer;">EN</button>
+    </div>
+
+    <div id="input-screen" class="container">
+        <h2
+            style="margin-bottom: 1.5rem; font-family: 'Sacramento', cursive; font-size: 2.5rem; color: var(--primary-color);">
+            Efektif Mesaj</h2>
+
+        <div class="form-group">
+            <label class="form-label">İsim</label>
+            <input type="text" id="inp-name" placeholder="Mesajı göndereceğiniz kişinin adını yazın">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Mesajın</label>
+            <textarea id="inp-message" placeholder="Örn: Seni çok seviyorum!"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Yazı Tipi</label>
+            <div class="options-grid" id="opt-font">
+                <div class="option-btn active" data-val="cursive"
+                    style="font-family: 'Sacramento', cursive; font-size: 1.2rem;">Romantik</div>
+                <div class="option-btn" data-val="neon" style="font-family: 'Orbitron', sans-serif;">Neon</div>
+                <div class="option-btn" data-val="retro" style="font-family: 'Pacifico', cursive;">Retro</div>
+                <div class="option-btn" data-val="modern"
+                    style="font-family: 'Montserrat', sans-serif; font-weight: 800;">Modern</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Yazı Boyutu</label>
+            <div class="options-grid" id="opt-size">
+                <div class="option-btn" data-val="small">Küçük</div>
+                <div class="option-btn active" data-val="medium">Orta</div>
+                <div class="option-btn" data-val="large">Büyük</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Renk Paleti</label>
+            <div class="options-grid" id="opt-color">
+                <div class="option-btn active" data-val="rainbow">🌈 Gökkuşağı</div>
+                <div class="option-btn" data-val="single">🎨 Tek Renk</div>
+                <div class="option-btn" data-val="gradient">🎭 İki Renk</div>
+            </div>
+            <div id="color-pickers" style="margin-top: 15px; display: none;">
+                <div id="single-color-picker" style="display: none;">
+                    <label
+                        style="font-size: 0.9rem; color: rgba(255,255,255,0.7); display: block; margin-bottom: 8px;">Renk
+                        Seç:</label>
+                    <input type="color" id="color1" value="#ff0055"
+                        style="width: 100%; height: 40px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.2); cursor: pointer;">
+                </div>
+                <div id="gradient-color-picker" style="display: none;">
+                    <label
+                        style="font-size: 0.9rem; color: rgba(255,255,255,0.7); display: block; margin-bottom: 8px;">1.
+                        Renk:</label>
+                    <input type="color" id="gradient-color1" value="#ff0055"
+                        style="width: 100%; height: 40px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.2); cursor: pointer; margin-bottom: 10px;">
+                    <label
+                        style="font-size: 0.9rem; color: rgba(255,255,255,0.7); display: block; margin-bottom: 8px;">2.
+                        Renk:</label>
+                    <input type="color" id="gradient-color2" value="#00e5ff"
+                        style="width: 100%; height: 40px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.2); cursor: pointer;">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Animasyon</label>
+            <div class="options-grid" id="opt-anim">
+                <div class="option-btn active btn-dust" data-val="dust">Efektif ✨</div>
+                <div class="option-btn btn-lines" data-val="lines">Işık Hızı ⚡</div>
+                <div class="option-btn btn-galaxy" data-val="galaxy">Galaksi 🌀</div>
+                <div class="option-btn btn-rain" data-val="rain">Matrix 🌧️</div>
+                <div class="option-btn" data-val="heartbeat">Kalp Atışı</div>
+                <div class="option-btn" data-val="blink">Yanıp Sönme</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Arka Plan</label>
+            <div class="options-grid" id="opt-bg">
+                <div class="option-btn active" data-val="fireworks">Havai Fişek</div>
+                <div class="option-btn" data-val="hearts">Kalpler</div>
+                <div class="option-btn" data-val="space">Uzay</div>
+                <div class="option-btn" data-val="simple">Sade</div>
+            </div>
+        </div>
+
+        <button id="create-btn" class="main-btn">Linki Oluştur & Kopyala</button>
+    </div>
+
+    <div id="display-screen">
+        <canvas id="text-canvas" style="display: none;"></canvas>
+        <h1 id="display-name" style="display: none;"></h1>
+        <p id="display-message"></p>
+    </div>
+
+    <div id="toast">Link Kopyalandı!</div>
+
+    <div
+        style="position: fixed; bottom: 10px; right: 15px; font-size: 0.7rem; color: rgba(255,255,255,0.15); font-weight: 300; z-index: 1000; text-align: right; user-select: none;">
+        v0.5<br>
+        <a href="https://github.com/Sefflex" target="_blank"
+            style="color: rgba(255,255,255,0.15); text-decoration: none; transition: color 0.3s;"
+            onmouseover="this.style.color='rgba(255,255,255,0.4)'"
+            onmouseout="this.style.color='rgba(255,255,255,0.15)'">Sefflex</a>
+    </div>
+
+    <script src="js/animations.js"></script>
+    <script src="js/text-particles.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
