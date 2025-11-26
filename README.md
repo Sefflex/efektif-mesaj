@@ -37,11 +37,9 @@ Bu proje tamamen statik dosyalardan (HTML, CSS, JS) oluşur. Herhangi bir sunucu
 
 Bu projeyi **ücretsiz** olarak internette yayınlayabilirsiniz:
 
-1.  Bu projeyi kendi GitHub hesabınıza yükleyin (Fork veya yeni repo).
-2.  Reponuzun **Settings** > **Pages** sekmesine gidin.
-3.  **Source** kısmından `main` (veya `master`) branch'ini seçip kaydedin.
-4.  Birkaç dakika içinde GitHub size `https://kullaniciadi.github.io/repo-adi` şeklinde bir link verecektir.
-5.  Bu linki arkadaşlarınıza atabilirsiniz!
+Eğer indirmeden kullanmak istiyorsanzı buyrun demo linki istediğiniz gibi sevdiklerinize atabilirisniz.
+
+https://sefflex.github.io/efektif-mesaj/
 
 ## 🛠️ Teknolojiler
 
@@ -76,4 +74,5 @@ Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır. Yani kaynak kodunu özg
 
 ---
 *Sevgiyle kodlandı. ❤️*
+
 
