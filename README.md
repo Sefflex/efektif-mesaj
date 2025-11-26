@@ -4,8 +4,9 @@
 
 Bu proje, HTML5 Canvas ve modern CSS teknolojileri kullanılarak geliştirilmiş, tamamen kişiselleştirilebilir bir web uygulamasıdır. Veritabanı gerektirmez, oluşturduğunuz linki paylaşmanız yeterlidir.
 
-![Demo](https://raw.githubusercontent.com/Sefflex/efektif-mesaj/main/demo.gif)
-*(Buraya projenizin bir ekran görüntüsünü veya GIF'ini ekleyebilirsiniz)*
+DEMO:
+ https://sefflex.github.io/efektif-mesaj/
+
 
 ## 🌟 Özellikler
 
@@ -75,3 +76,4 @@ Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır. Yani kaynak kodunu özg
 
 ---
 *Sevgiyle kodlandı. ❤️*
+
